@@ -1,0 +1,32 @@
+{% extends 'ele/base.html' %}
+
+{% block title %}
+
+posts
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container mx-auto p-4">
+    <h1 class="text-4xl font-bold mb-4">In this Institute one of the best professors are working. Here is the list of professors</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for faculty in pfs %}
+        {% if faculty.profile_image %}
+        <div class="card shadow-lg">
+            <img src="{{ faculty.profile_image.url }}"class="w-32 h-32 rounded-full mr-4" alt="{{ faculty.name }}">
+            {% endif %}            
+            <div class="card-body">
+                <h5 class="card-title text-xl font-semibold">{{ faculty.username }}</h5>
+                <p class="card-text text-gray-600">Subjects:-{{ faculty.subjects }}</p>
+                <p class="card-text text-gray-600">Email:-{{ faculty.email }}</p>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

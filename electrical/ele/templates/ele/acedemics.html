@@ -1,0 +1,37 @@
+{% extends 'ele/base.html' %}
+
+{% block title %}
+
+
+Acedemics
+
+{% endblock %}
+
+
+
+
+
+  {% block content %}
+  <div class="container mx-auto p-4">
+    <h1 class="text-4xl font-bold text-center text-blue-600">Academics</h1>
+    <p class="text-lg text-gray-700 mt-4">Our department offers a range of programs and courses in electrical engineering, covering topics such as circuits, electronics, power systems, communications, signal processing, and more.</p>
+    <div class="grid grid-cols-2 gap-4 mt-8">
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?electrical-engineering" alt="Electrical Engineering" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-semibold text-gray-800">Undergraduate Programs</h2>
+          <p class="text-gray-600 mt-2">Earn a Bachelor of Science in Electrical Engineering or a Bachelor of Applied Science in Electrical Engineering Technology.</p>
+          <a href="#" class="inline-block bg-blue-600 text-white px-4 py-2 mt-4 rounded">Learn more</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?research" alt="Research" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-semibold text-gray-800">Graduate Programs</h2>
+          <p class="text-gray-600 mt-2">Pursue a Master of Science or a Doctor of Philosophy in Electrical Engineering and conduct cutting-edge research in our state-of-the-art facilities.</p>
+          <a href="#" class="inline-block bg-blue-600 text-white px-4 py-2 mt-4 rounded">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div
+{% endblock %}

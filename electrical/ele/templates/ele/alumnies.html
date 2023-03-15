@@ -1,0 +1,33 @@
+{% extends 'ele/base.html' %}
+
+{% block title %}
+
+posts
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container mx-auto p-4">
+    <h1 class="text-4xl font-bold mb-4">List of Alumnies</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for alumni in alumnies %}
+        
+        <div class="card shadow-lg">
+            {% if alumni.profile_image %}
+            <img src="{{ alumni.profile_image.url }}"class="w-32 h-32 rounded-full mr-4" alt="{{ faculty.name }}">
+            {% endif %}            
+            <div class="card-body">
+                <h5 class="card-title text-xl font-semibold"><a href="#"></a>{{ alumni.username }}</a></h5>
+                <p class="card-text text-gray-600">Subjects:-{{ alumni.company }}</p>
+                <p class="card-text text-gray-600">Email:-{{ alumni.email }}</p>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

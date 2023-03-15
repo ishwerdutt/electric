@@ -1,0 +1,51 @@
+{% extends 'ele/base.html' %}
+
+{% block title %}
+
+posts
+
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+      <div class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+          <div class="md:flex">
+            <div class="md:flex-shrink-0">
+              <img class="h-48 w-full object-cover md:w-48" src="https://source.unsplash.com/random/800x600" alt="College image">
+            </div>
+            <div class="p-8">
+              <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Testimonials</div>
+              <p class="mt-2 text-gray-500">Welcome to our testimonial page, where you can hear from real students who have studied at our college and achieved their academic and personal goals. Testimonials are a powerful way to showcase the quality of our education, the diversity of our student body, and the impact of our alumni. Whether you are looking for a testimonial that relates to your program of interest, your career aspirations, or your cultural background, you can find it here. Browse through our testimonials and discover why our college is the right choice for you!</p>
+              <a href="#" class="block mt-4 text-indigo-700 font-bold hover:underline">Read more testimonials</a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <!-- Create a grid layout for the testimonials -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {% for post in alumni_posts %}
+          <!-- Create a card for each testimonial -->
+          <div class="card bg-white shadow-lg p-6 rounded-lg">
+          
+            {% if post.author.profile_image %}
+            <!-- Display user avatar -->
+            <img src="{{ post.author.profile_image.url }}" alt="Avatar" class="w-32 h-32 rounded-full mr-4">
+            {% endif %}
+            <h2 class="text-xl font-semibold text-center">{{post.author}}</h2>
+            <p class="text-gray-500 text-center">Software Engineer at Google</p>
+            <!-- Add the testimonial content -->
+            <p class="text-gray-700 mt-4 italic">"{{ post.content|safe }}"</p>
+          </div>
+          {% endfor %}
+        </div>
+        
+      </div>  
+      
+      
+{% endblock %}
